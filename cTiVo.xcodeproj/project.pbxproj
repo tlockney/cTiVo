@@ -431,6 +431,8 @@
 		1EFB697120DD3BB9001F5DB6 /* ccextractor in Copy Executables */ = {isa = PBXBuildFile; fileRef = 1ECB90EF20DD35B200E3317D /* ccextractor */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1EFE66FF1BE967460083386C /* sparklecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1EFE66FE1BE967460083386C /* sparklecast.xml */; };
 		236D9074CC35D6E31D290FD5 /* Pods_cTiVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDD17CF357B1B6F1F63B942 /* Pods_cTiVo.framework */; };
+		5DEF5DEF5DEF5DEF5DEF0002 /* cTiVo.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0001 /* cTiVo.sdef */; };
+		5DEF5DEF5DEF5DEF5DEF0003 /* cTiVo.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0001 /* cTiVo.sdef */; };
 		80AAC0435607E46FB9B031D5 /* Pods_cTiVo_MAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0877698AC1D17203FACBDA7 /* Pods_cTiVo_MAS.framework */; };
 		94F32E0F1D6A67F1004B7FEB /* ffmpeg_edl_ac3.sh in Resources */ = {isa = PBXBuildFile; fileRef = 94F32E0C1D6A6798004B7FEB /* ffmpeg_edl_ac3.sh */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AA41387C28A2A21B002C9813 /* MTMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA41387B28A2A21B002C9813 /* MTMock.swift */; };
@@ -1246,6 +1248,7 @@
 		1EFA8D52211BFF6900B4505D /* MTChannelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTChannelPopUpButton.h; sourceTree = "<group>"; };
 		1EFE66FE1BE967460083386C /* sparklecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sparklecast.xml; sourceTree = "<group>"; };
 		5C3FB5DEBFD99FC5DBC7E884 /* Pods-cTiVo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cTiVo.release.xcconfig"; path = "Target Support Files/Pods-cTiVo/Pods-cTiVo.release.xcconfig"; sourceTree = "<group>"; };
+		5DEF5DEF5DEF5DEF5DEF0001 /* cTiVo.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cTiVo.sdef; sourceTree = "<group>"; };
 		5E9D13866699FC998B8719BF /* Pods-cTiVoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cTiVoTests.release.xcconfig"; path = "Target Support Files/Pods-cTiVoTests/Pods-cTiVoTests.release.xcconfig"; sourceTree = "<group>"; };
 		831BF5CDC6A933443AEE587A /* Pods-cTiVo MAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cTiVo MAS.debug.xcconfig"; path = "Target Support Files/Pods-cTiVo MAS/Pods-cTiVo MAS.debug.xcconfig"; sourceTree = "<group>"; };
 		94F32E0C1D6A6798004B7FEB /* ffmpeg_edl_ac3.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ffmpeg_edl_ac3.sh; sourceTree = "<group>"; };
@@ -1950,6 +1953,7 @@
 				D2995CAA168D08B300B960B9 /* cTiVo_sparkle_pub.pem */,
 				D219D5F316A503C100C79962 /* EncoderHelpText.rtf */,
 				D2D60BC016766F3200CE32DE /* formats.plist */,
+				5DEF5DEF5DEF5DEF5DEF0001 /* cTiVo.sdef */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2404,6 +2408,7 @@
 				1E50512022556CC300D5981B /* Credits.rtf in Resources */,
 				1E50512122556CC300D5981B /* MainMenu.xib in Resources */,
 				1E50512222556CC300D5981B /* formats.plist in Resources */,
+				5DEF5DEF5DEF5DEF5DEF0002 /* cTiVo.sdef in Resources */,
 				1E50512322556CC300D5981B /* save-until-i-delete-recording@2x.png in Resources */,
 				1E50512422556CC300D5981B /* CommercialHelpFile.rtfd in Resources */,
 				1E50512522556CC300D5981B /* MTMainWindowController.xib in Resources */,
@@ -2481,6 +2486,7 @@
 				D2D60BB216766EFD00CE32DE /* Credits.rtf in Resources */,
 				D2D60BB816766EFD00CE32DE /* MainMenu.xib in Resources */,
 				D2D60BC516766F3200CE32DE /* formats.plist in Resources */,
+				5DEF5DEF5DEF5DEF5DEF0003 /* cTiVo.sdef in Resources */,
 				1E964CA31882768A00C19046 /* save-until-i-delete-recording@2x.png in Resources */,
 				1E02BDE12056E9BB000B9F56 /* CommercialHelpFile.rtfd in Resources */,
 				D279D3EC167A32FA007F0677 /* MTMainWindowController.xib in Resources */,
@@ -2551,13 +2557,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cTiVo MAS/Pods-cTiVo MAS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cTiVo MAS/Pods-cTiVo MAS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2779,13 +2781,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cTiVo/Pods-cTiVo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cTiVo/Pods-cTiVo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
