@@ -41,6 +41,8 @@
 		1E5050CF22556CC300D5981B /* MTChannelPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA8D4F211BFF6900B4505D /* MTChannelPopUpButton.m */; };
 		1E5050D022556CC300D5981B /* MTRemoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB106202A0BDB008A0F32 /* MTRemoteWindowController.m */; };
 		1E5050D222556CC300D5981B /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BB416766EFD00CE32DE /* MTAppDelegate.m */; };
+		5DEF5DEF5DEF5DEF5DEF0011 /* NSApplication+MTScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0010 /* NSApplication+MTScripting.m */; };
+		5DEF5DEF5DEF5DEF5DEF0021 /* MTTiVo+MTScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0020 /* MTTiVo+MTScripting.m */; };
 		1E5050D422556CC300D5981B /* MTTiVoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BC916766FA600CE32DE /* MTTiVoManager.m */; };
 		1E5050D522556CC300D5981B /* MTDownloadTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BCC16766FA600CE32DE /* MTDownloadTableView.m */; };
 		1E5050D622556CC300D5981B /* MTProgramTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BCE16766FA600CE32DE /* MTProgramTableView.m */; };
@@ -499,6 +501,8 @@
 		D2D60BAE16766EFD00CE32DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BAD16766EFD00CE32DE /* main.m */; };
 		D2D60BB216766EFD00CE32DE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D2D60BB016766EFD00CE32DE /* Credits.rtf */; };
 		D2D60BB516766EFD00CE32DE /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BB416766EFD00CE32DE /* MTAppDelegate.m */; };
+		5DEF5DEF5DEF5DEF5DEF0012 /* NSApplication+MTScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0010 /* NSApplication+MTScripting.m */; };
+		5DEF5DEF5DEF5DEF5DEF0022 /* MTTiVo+MTScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF5DEF5DEF5DEF5DEF0020 /* MTTiVo+MTScripting.m */; };
 		D2D60BB816766EFD00CE32DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D60BB616766EFD00CE32DE /* MainMenu.xib */; };
 		D2D60BC516766F3200CE32DE /* formats.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2D60BC016766F3200CE32DE /* formats.plist */; };
 		D2D60BD416766FA600CE32DE /* MTTiVoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D60BC916766FA600CE32DE /* MTTiVoManager.m */; };
@@ -1356,6 +1360,8 @@
 		D2D60BB116766EFD00CE32DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D2D60BB316766EFD00CE32DE /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
 		D2D60BB416766EFD00CE32DE /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MTAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5DEF5DEF5DEF5DEF5DEF0010 /* NSApplication+MTScripting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+MTScripting.m"; sourceTree = "<group>"; };
+		5DEF5DEF5DEF5DEF5DEF0020 /* MTTiVo+MTScripting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MTTiVo+MTScripting.m"; sourceTree = "<group>"; };
 		D2D60BC016766F3200CE32DE /* formats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = formats.plist; sourceTree = "<group>"; };
 		D2D60BC916766FA600CE32DE /* MTTiVoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTiVoManager.m; sourceTree = "<group>"; };
 		D2D60BCA16766FA600CE32DE /* MTTiVoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = MTTiVoManager.h; sourceTree = "<group>"; };
@@ -1899,6 +1905,8 @@
 				1E84895E2314B1DB00D56756 /* cTVMainMenu.xib */,
 				D2D60BB316766EFD00CE32DE /* MTAppDelegate.h */,
 				D2D60BB416766EFD00CE32DE /* MTAppDelegate.m */,
+				5DEF5DEF5DEF5DEF5DEF0010 /* NSApplication+MTScripting.m */,
+				5DEF5DEF5DEF5DEF5DEF0020 /* MTTiVo+MTScripting.m */,
 				D2D60BCB16766FA600CE32DE /* MTConstants.h */,
 				D2DA8FBA169CDAAD0053B7CB /* Data Model */,
 				D2DA8FBB169CDACC0053B7CB /* UI Classes- Main Window */,
@@ -2803,6 +2811,8 @@
 				1E5050D022556CC300D5981B /* MTRemoteWindowController.m in Sources */,
 				AABD5A1C289737E40040A017 /* MTTMDBService.swift in Sources */,
 				1E5050D222556CC300D5981B /* MTAppDelegate.m in Sources */,
+				5DEF5DEF5DEF5DEF5DEF0011 /* NSApplication+MTScripting.m in Sources */,
+				5DEF5DEF5DEF5DEF5DEF0021 /* MTTiVo+MTScripting.m in Sources */,
 				1E5050D422556CC300D5981B /* MTTiVoManager.m in Sources */,
 				1E5050D522556CC300D5981B /* MTDownloadTableView.m in Sources */,
 				1E5050D622556CC300D5981B /* MTProgramTableView.m in Sources */,
@@ -2893,6 +2903,8 @@
 				1EFA8D53211BFF6A00B4505D /* MTChannelPopUpButton.m in Sources */,
 				1E6AB108202A0BDB008A0F32 /* MTRemoteWindowController.m in Sources */,
 				D2D60BB516766EFD00CE32DE /* MTAppDelegate.m in Sources */,
+				5DEF5DEF5DEF5DEF5DEF0012 /* NSApplication+MTScripting.m in Sources */,
+				5DEF5DEF5DEF5DEF5DEF0022 /* MTTiVo+MTScripting.m in Sources */,
 				D2D60BD416766FA600CE32DE /* MTTiVoManager.m in Sources */,
 				D2D60BD716766FA600CE32DE /* MTDownloadTableView.m in Sources */,
 				D2D60BD916766FA600CE32DE /* MTProgramTableView.m in Sources */,

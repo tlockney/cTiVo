@@ -5,6 +5,40 @@
 	<xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
 
 	<suite name="cTiVo Suite" code="cTiV" description="Classes and commands for controlling cTiVo.">
+
+		<class-extension extends="application" description="cTiVo's application object.">
+			<cocoa class="NSApplication"/>
+			<element type="tivo" access="r">
+				<cocoa key="tivos"/>
+			</element>
+		</class-extension>
+
+		<class name="tivo" code="cTVT" description="A TiVo device that cTiVo can communicate with.">
+			<cocoa class="MTTiVo"/>
+			<property name="name" code="pnam" type="text" access="r" description="The display name of the TiVo. Uses the user-customized name if set in cTiVo, otherwise the Bonjour broadcast name."/>
+			<property name="serial number" code="cTSN" type="text" access="r" description="The TiVo's serial number.">
+				<cocoa key="tiVoSerialNumber"/>
+			</property>
+			<property name="mini" code="cTMn" type="boolean" access="r" description="True if this is a TiVo Mini, which has no local recording capability.">
+				<cocoa key="isMini"/>
+			</property>
+			<property name="reachable" code="cTRc" type="boolean" access="r" description="Whether cTiVo can currently reach this TiVo on the network.">
+				<cocoa key="isReachable"/>
+			</property>
+			<property name="supports transport stream" code="cTTS" type="boolean" access="r" description="Whether this TiVo can deliver recordings as MPEG-TS (required for H.264 channels).">
+				<cocoa key="supportsTransportStream"/>
+			</property>
+			<property name="supports RPC" code="cTRP" type="boolean" access="r" description="Whether this TiVo supports the RPC protocol used for SkipMode, remote control, and other interactive features.">
+				<cocoa key="supportsRPC"/>
+			</property>
+			<property name="enabled" code="cTen" type="boolean" access="r" description="Whether cTiVo is configured to communicate with this TiVo.">
+				<cocoa key="enabled"/>
+			</property>
+			<property name="last download ended" code="cTLE" type="date" access="r" description="When cTiVo last finished downloading a recording from this TiVo.">
+				<cocoa key="lastDownloadEnded"/>
+			</property>
+		</class>
+
 	</suite>
 
 </dictionary>
