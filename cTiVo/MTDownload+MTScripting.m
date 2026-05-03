@@ -24,6 +24,12 @@
                                                                       key:@"downloadQueueObject"];
 }
 
+- (void)removeObjectFromDownloadQueueAtIndex:(NSUInteger)index {
+    if (index >= self.downloadQueue.count) return;
+    MTDownload *download = self.downloadQueue[index];
+    [self deleteFromDownloadQueue:@[download]];
+}
+
 @end
 
 @interface MTDownload (MTScripting)
