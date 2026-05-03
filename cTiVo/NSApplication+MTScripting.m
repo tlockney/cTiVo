@@ -11,12 +11,17 @@
 
 @interface NSApplication (MTScripting)
 @property (nonatomic, readonly) NSArray<MTTiVo *> *tivos;
+@property (nonatomic, readonly) NSArray<MTTiVoShow *> *tivoShows;
 @end
 
 @implementation NSApplication (MTScripting)
 
 - (NSArray<MTTiVo *> *)tivos {
     return tiVoManager.tiVoList;
+}
+
+- (NSArray<MTTiVoShow *> *)tivoShows {
+    return tiVoManager.tiVoShows;
 }
 
 @end

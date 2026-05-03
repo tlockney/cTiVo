@@ -11,10 +11,16 @@
 			<element type="tivo" access="r">
 				<cocoa key="tivos"/>
 			</element>
+			<element type="show" access="r" description="All recordings across all TiVos.">
+				<cocoa key="tivoShows"/>
+			</element>
 		</class-extension>
 
 		<class name="tivo" code="cTVT" description="A TiVo device that cTiVo can communicate with.">
 			<cocoa class="MTTiVo"/>
+			<element type="show" access="r" description="Recordings on this TiVo.">
+				<cocoa key="shows"/>
+			</element>
 			<property name="name" code="pnam" type="text" access="r" description="The display name of the TiVo. Uses the user-customized name if set in cTiVo, otherwise the Bonjour broadcast name."/>
 			<property name="serial number" code="cTSN" type="text" access="r" description="The TiVo's serial number.">
 				<cocoa key="tiVoSerialNumber"/>
@@ -36,6 +42,91 @@
 			</property>
 			<property name="last download ended" code="cTLE" type="date" access="r" description="When cTiVo last finished downloading a recording from this TiVo.">
 				<cocoa key="lastDownloadEnded"/>
+			</property>
+		</class>
+
+		<class name="show" code="cTSh" description="A recording on a TiVo.">
+			<cocoa class="MTTiVoShow"/>
+
+			<property name="id" code="ID  " type="integer" access="r" description="The show's TiVo-assigned numeric ID. Unique within a single TiVo, not across TiVos.">
+				<cocoa key="showID"/>
+			</property>
+			<property name="unique id" code="cSuI" type="text" access="r" description="A stable identifier that is unique across all TiVos. Combines the program ID with the show date for non-episodic recordings.">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="tivo" code="cSTv" type="tivo" access="r" description="The TiVo this recording is on.">
+				<cocoa key="tiVo"/>
+			</property>
+
+			<property name="series title" code="cSST" type="text" access="r" description="The series title (e.g. &quot;The Bear&quot;).">
+				<cocoa key="seriesTitle"/>
+			</property>
+			<property name="episode title" code="cSET" type="text" access="r" description="The title of this specific episode.">
+				<cocoa key="episodeTitle"/>
+			</property>
+			<property name="description" code="cSDe" type="text" access="r" description="The synopsis or description of the recording.">
+				<cocoa key="showDescription"/>
+			</property>
+
+			<property name="season" code="cSSn" type="integer" access="r" description="The season number, or 0 if unknown."/>
+			<property name="episode" code="cSEp" type="integer" access="r" description="The episode number within the season, or 0 if unknown."/>
+			<property name="season episode" code="cSSE" type="text" access="r" description="A combined &quot;S02E04&quot;-style season-and-episode identifier.">
+				<cocoa key="seasonEpisode"/>
+			</property>
+			<property name="original air date" code="cSOA" type="text" access="r" description="The original broadcast date as supplied by TiVo. Kept as text because the format varies by source.">
+				<cocoa key="originalAirDate"/>
+			</property>
+
+			<property name="movie" code="cSMo" type="boolean" access="r" description="True if the recording is a movie.">
+				<cocoa key="isMovie"/>
+			</property>
+			<property name="episodic" code="cSEs" type="boolean" access="r" description="True if the recording is part of an episodic series (as opposed to a one-off, sports event, or movie).">
+				<cocoa key="isEpisodicShow"/>
+			</property>
+			<property name="suggestion" code="cSSu" type="boolean" access="r" description="True if this recording was made automatically by TiVo Suggestions rather than requested by the user.">
+				<cocoa key="isSuggestion"/>
+			</property>
+			<property name="queued" code="cSQu" type="boolean" access="r" description="True if this recording is currently in cTiVo's download queue.">
+				<cocoa key="isQueued"/>
+			</property>
+			<property name="protected" code="cSPr" type="boolean" access="r" description="True if the recording is copy-protected (DRM) and cannot be downloaded.">
+				<cocoa key="protectedShow"/>
+			</property>
+			<property name="in progress" code="cSIP" type="boolean" access="r" description="True if the TiVo is currently in the middle of recording this show.">
+				<cocoa key="inProgress"/>
+			</property>
+			<property name="HD" code="cSHD" type="boolean" access="r" description="True if the recording is high-definition.">
+				<cocoa key="isHD"/>
+			</property>
+			<property name="on disk" code="cSOD" type="boolean" access="r" description="True if cTiVo has already downloaded a copy of this recording to local disk.">
+				<cocoa key="isOnDisk"/>
+			</property>
+
+			<property name="show date" code="cSDt" type="date" access="r" description="When the recording was made.">
+				<cocoa key="showDate"/>
+			</property>
+			<property name="length" code="cSLe" type="integer" access="r" description="The length of the recording in seconds.">
+				<cocoa key="showLength"/>
+			</property>
+			<property name="file size" code="cSFS" type="integer" access="r" description="The size of the recording on the TiVo, in bytes.">
+				<cocoa key="fileSize"/>
+			</property>
+
+			<property name="channel" code="cSCh" type="text" access="r" description="The channel name (e.g. &quot;HBO&quot;).">
+				<cocoa key="channelString"/>
+			</property>
+			<property name="channel number" code="cSCN" type="integer" access="r" description="The numeric channel number, or a large sentinel value if unknown.">
+				<cocoa key="channelNumber"/>
+			</property>
+			<property name="station" code="cSSt" type="text" access="r" description="The broadcast station call sign (e.g. &quot;KOMO&quot;).">
+				<cocoa key="stationCallsign"/>
+			</property>
+
+			<property name="age rating" code="cSAR" type="text" access="r" description="The age rating, combining TV and MPAA ratings (e.g. &quot;TV-MA&quot;, &quot;PG-13&quot;).">
+				<cocoa key="ageRatingString"/>
+			</property>
+			<property name="star rating" code="cSSR" type="text" access="r" description="The critical star rating supplied by TiVo, as a formatted string.">
+				<cocoa key="starRatingString"/>
 			</property>
 		</class>
 
