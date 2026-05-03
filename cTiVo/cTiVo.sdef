@@ -14,6 +14,12 @@
 			<element type="show" access="r" description="All recordings across all TiVos.">
 				<cocoa key="tivoShows"/>
 			</element>
+			<element type="download" access="r" description="Convenience: same as downloads of queue.">
+				<cocoa key="downloadQueue"/>
+			</element>
+			<property name="download queue" code="cTQp" type="queue" access="r" description="cTiVo's download queue.">
+				<cocoa key="downloadQueueObject"/>
+			</property>
 		</class-extension>
 
 		<class name="tivo" code="cTVT" description="A TiVo device that cTiVo can communicate with.">
@@ -127,6 +133,59 @@
 			</property>
 			<property name="star rating" code="cSSR" type="text" access="r" description="The critical star rating supplied by TiVo, as a formatted string.">
 				<cocoa key="starRatingString"/>
+			</property>
+		</class>
+
+		<class name="queue" code="cTQu" description="cTiVo's download queue. There is exactly one queue per running cTiVo instance.">
+			<cocoa class="MTTiVoManager"/>
+			<element type="download" access="r">
+				<cocoa key="downloadQueue"/>
+			</element>
+		</class>
+
+		<class name="download" code="cTDl" description="A queued or in-progress download in cTiVo.">
+			<cocoa class="MTDownload"/>
+
+			<property name="show" code="cDSh" type="show" access="r" description="The recording being downloaded."/>
+			<property name="status" code="cDSt" type="text" access="r" description="A human-readable description of the download's current state.">
+				<cocoa key="showStatus"/>
+			</property>
+			<property name="progress" code="cDPg" type="real" access="r" description="Download progress as a fraction from 0.0 to 1.0.">
+				<cocoa key="processProgress"/>
+			</property>
+			<property name="speed" code="cDSp" type="real" access="r" description="Current transfer speed in bytes per second."/>
+			<property name="time left" code="cDTL" type="text" access="r" description="A human-readable estimate of remaining time.">
+				<cocoa key="timeLeft"/>
+			</property>
+
+			<property name="downloading" code="cDDg" type="boolean" access="r" description="True if this download is actively transferring or processing.">
+				<cocoa key="isDownloading"/>
+			</property>
+			<property name="done" code="cDDn" type="boolean" access="r" description="True if the download has finished.">
+				<cocoa key="isDone"/>
+			</property>
+			<property name="canceled" code="cDCx" type="boolean" access="r" description="True if the download was canceled.">
+				<cocoa key="isCanceled"/>
+			</property>
+
+			<property name="download directory" code="cDDr" type="text" access="r" description="The directory the file is being saved into.">
+				<cocoa key="downloadDirectory"/>
+			</property>
+			<property name="output path" code="cDOP" type="text" access="r" description="The full path of the encoded output file (may not yet exist).">
+				<cocoa key="encodeFilePath"/>
+			</property>
+
+			<property name="add to iTunes" code="cDAi" type="boolean" access="r" description="True if the encoded file will be added to TV/Music when complete.">
+				<cocoa key="addToiTunesWhenEncoded"/>
+			</property>
+			<property name="skip commercials" code="cDSC" type="boolean" access="r" description="True if commercials will be cut from the output.">
+				<cocoa key="skipCommercials"/>
+			</property>
+			<property name="mark commercials" code="cDMC" type="boolean" access="r" description="True if commercial boundaries will be marked in the output (rather than cut).">
+				<cocoa key="markCommercials"/>
+			</property>
+			<property name="use skip mode" code="cDUS" type="boolean" access="r" description="True if TiVo's SkipMode data will be used to identify commercials.">
+				<cocoa key="useSkipMode"/>
 			</property>
 		</class>
 

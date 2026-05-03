@@ -12,6 +12,8 @@
 @interface NSApplication (MTScripting)
 @property (nonatomic, readonly) NSArray<MTTiVo *> *tivos;
 @property (nonatomic, readonly) NSArray<MTTiVoShow *> *tivoShows;
+@property (nonatomic, readonly) MTTiVoManager *downloadQueueObject;
+@property (nonatomic, readonly) NSArray<MTDownload *> *downloadQueue;
 @end
 
 @implementation NSApplication (MTScripting)
@@ -22,6 +24,14 @@
 
 - (NSArray<MTTiVoShow *> *)tivoShows {
     return tiVoManager.tiVoShows;
+}
+
+- (MTTiVoManager *)downloadQueueObject {
+    return tiVoManager;
+}
+
+- (NSArray<MTDownload *> *)downloadQueue {
+    return tiVoManager.downloadQueue;
 }
 
 @end
