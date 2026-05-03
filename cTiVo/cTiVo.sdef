@@ -17,8 +17,14 @@
 			<element type="download" access="r" description="Convenience: same as downloads of queue.">
 				<cocoa key="downloadQueue"/>
 			</element>
+			<element type="format" access="r" description="The conversion formats cTiVo can use.">
+				<cocoa key="formatList"/>
+			</element>
 			<property name="download queue" code="cTQp" type="queue" access="r" description="cTiVo's download queue.">
 				<cocoa key="downloadQueueObject"/>
+			</property>
+			<property name="selected format" code="cTSF" type="format" access="r" description="The format currently selected as the default for new downloads.">
+				<cocoa key="selectedFormat"/>
 			</property>
 		</class-extension>
 
@@ -147,6 +153,9 @@
 			<cocoa class="MTDownload"/>
 
 			<property name="show" code="cDSh" type="show" access="r" description="The recording being downloaded."/>
+			<property name="format" code="cDFm" type="format" access="r" description="The conversion format that will be used.">
+				<cocoa key="encodeFormat"/>
+			</property>
 			<property name="status" code="cDSt" type="text" access="r" description="A human-readable description of the download's current state.">
 				<cocoa key="showStatus"/>
 			</property>
@@ -186,6 +195,40 @@
 			</property>
 			<property name="use skip mode" code="cDUS" type="boolean" access="r" description="True if TiVo's SkipMode data will be used to identify commercials.">
 				<cocoa key="useSkipMode"/>
+			</property>
+		</class>
+
+		<class name="format" code="cTFm" description="A video conversion format (e.g. &quot;Apple TV 4K&quot;, &quot;iPhone HD&quot;).">
+			<cocoa class="MTFormat"/>
+
+			<property name="name" code="pnam" type="text" access="r" description="The display name of the format."/>
+			<property name="description" code="cFDe" type="text" access="r" description="A human-readable description of the format.">
+				<cocoa key="formatDescription"/>
+			</property>
+			<property name="extension" code="cFEx" type="text" access="r" description="The output filename extension (e.g. &quot;mp4&quot;, &quot;m4v&quot;).">
+				<cocoa key="filenameExtension"/>
+			</property>
+			<property name="encoder" code="cFEn" type="text" access="r" description="Which encoder this format uses (e.g. &quot;HandBrakeCLI&quot;, &quot;ffmpeg&quot;).">
+				<cocoa key="encoderUsed"/>
+			</property>
+
+			<property name="available" code="cFAv" type="boolean" access="r" description="True if the encoder this format depends on is installed and ready.">
+				<cocoa key="isAvailable"/>
+			</property>
+			<property name="hidden" code="cFHd" type="boolean" access="r" description="True if the user has hidden this format from the format picker.">
+				<cocoa key="isHidden"/>
+			</property>
+			<property name="factory" code="cFFa" type="boolean" access="r" description="True if this is a built-in format supplied with cTiVo (rather than a user-customized one).">
+				<cocoa key="isFactoryFormat"/>
+			</property>
+			<property name="deprecated" code="cFDp" type="boolean" access="r" description="True if this format is deprecated.">
+				<cocoa key="isDeprecated"/>
+			</property>
+			<property name="commercial skip" code="cFCS" type="boolean" access="r" description="True if commercials will be cut when using this format.">
+				<cocoa key="comSkip"/>
+			</property>
+			<property name="add to iTunes" code="cFAi" type="boolean" access="r" description="True if downloads using this format are automatically added to TV/Music when complete.">
+				<cocoa key="iTunes"/>
 			</property>
 		</class>
 

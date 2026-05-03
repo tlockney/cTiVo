@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) NSArray<MTTiVoShow *> *tivoShows;
 @property (nonatomic, readonly) MTTiVoManager *downloadQueueObject;
 @property (nonatomic, readonly) NSArray<MTDownload *> *downloadQueue;
+@property (nonatomic, readonly) NSArray<MTFormat *> *formatList;
+@property (nonatomic, readonly) MTFormat *selectedFormat;
 @end
 
 @implementation NSApplication (MTScripting)
@@ -32,6 +34,14 @@
 
 - (NSArray<MTDownload *> *)downloadQueue {
     return tiVoManager.downloadQueue;
+}
+
+- (NSArray<MTFormat *> *)formatList {
+    return tiVoManager.formatList;
+}
+
+- (MTFormat *)selectedFormat {
+    return tiVoManager.selectedFormat;
 }
 
 @end
