@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL processingPaused;
 - (id)handlePauseProcessingCommand:(NSScriptCommand *)command;
 - (id)handleResumeProcessingCommand:(NSScriptCommand *)command;
+- (id)handleAddCommand:(NSScriptCommand *)command;
 @end
 
 @implementation NSApplication (MTScripting)
@@ -63,6 +64,33 @@
 - (id)handleResumeProcessingCommand:(NSScriptCommand *)command {
     self.processingPaused = NO;
     return nil;
+}
+
+- (id)handleAddCommand:(NSScriptCommand *)command {
+    id direct = command.directParameter;
+    NSArray *items = [direct isKindOfClass:[NSArray class]] ? direct : (direct ? @[direct] : @[]);
+
+    NSMutableArray<MTTiVoShow *> *shows = [NSMutableArray array];
+    for (id item in items) {
+        id resolved = [item isKindOfClass:[NSScriptObjectSpecifier class]]
+            ? [(NSScriptObjectSpecifier *)item objectsByEvaluatingSpecifier]
+            : item;
+        if ([resolved isKindOfClass:[NSArray class]]) {
+            for (id sub in (NSArray *)resolved) {
+                if ([sub isKindOfClass:[MTTiVoShow class]]) [shows addObject:sub];
+            }
+        } else if ([resolved isKindOfClass:[MTTiVoShow class]]) {
+            [shows addObject:resolved];
+        }
+    }
+
+    if (shows.count == 0) {
+        command.scriptErrorNumber = -1701;
+        command.scriptErrorString = @"add: no valid shows supplied as the direct parameter.";
+        return nil;
+    }
+
+    return [tiVoManager downloadShowsWithCurrentOptions:shows beforeDownload:nil];
 }
 
 @end

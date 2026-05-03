@@ -35,6 +35,9 @@
 			<responds-to command="resume processing">
 				<cocoa method="handleResumeProcessingCommand:"/>
 			</responds-to>
+			<responds-to command="add">
+				<cocoa method="handleAddCommand:"/>
+			</responds-to>
 		</class-extension>
 
 		<class name="tivo" code="cTVT" description="A TiVo device that cTiVo can communicate with.">
@@ -209,6 +212,15 @@
 
 		<command name="pause processing" code="cTiVPaus" description="Pause cTiVo's download queue processing. New downloads will not start until processing is resumed."/>
 		<command name="resume processing" code="cTiVResu" description="Resume cTiVo's download queue processing if it was paused."/>
+
+		<command name="add" code="cTiVAdd " description="Add one or more shows to cTiVo's download queue. Uses the currently selected format and the user's default download options.">
+			<direct-parameter description="The show or shows to add to the download queue.">
+				<type type="show" list="yes"/>
+			</direct-parameter>
+			<result description="The download(s) that were created.">
+				<type type="download" list="yes"/>
+			</result>
+		</command>
 
 		<class name="format" code="cTFm" description="A video conversion format (e.g. &quot;Apple TV 4K&quot;, &quot;iPhone HD&quot;).">
 			<cocoa class="MTFormat"/>
