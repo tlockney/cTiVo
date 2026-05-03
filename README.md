@@ -53,6 +53,10 @@ If your cTiVo has suddenly lost RPC functions (like Remote Control, Play/Delete,
 *    Directly select streaming services.
 *    Information about current status of TiVo (disk space, activity, network etc).
 
+## Scripting
+* AppleScript / JXA / Shortcuts.app dictionary covering TiVos, recordings, formats, and the download queue.
+* See [AppleScript.md](AppleScript.md) for the object model and patterns; sample scripts in [scripts/](scripts/).
+
 ## To install:
 
 Download the [cTiVo application](https://github.com/mackworth/cTiVo/releases), and run it. It will ask if OK to move to Applications folder. It will automatically find your TiVos, and show you what's available.
