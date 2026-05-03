@@ -26,6 +26,15 @@
 			<property name="selected format" code="cTSF" type="format" access="r" description="The format currently selected as the default for new downloads.">
 				<cocoa key="selectedFormat"/>
 			</property>
+			<property name="processing paused" code="cTPP" type="boolean" access="rw" description="True when cTiVo's download queue processing is paused. Set to true to pause; set to false to resume.">
+				<cocoa key="processingPaused"/>
+			</property>
+			<responds-to command="pause processing">
+				<cocoa method="handlePauseProcessingCommand:"/>
+			</responds-to>
+			<responds-to command="resume processing">
+				<cocoa method="handleResumeProcessingCommand:"/>
+			</responds-to>
 		</class-extension>
 
 		<class name="tivo" code="cTVT" description="A TiVo device that cTiVo can communicate with.">
@@ -197,6 +206,9 @@
 				<cocoa key="useSkipMode"/>
 			</property>
 		</class>
+
+		<command name="pause processing" code="cTiVPaus" description="Pause cTiVo's download queue processing. New downloads will not start until processing is resumed."/>
+		<command name="resume processing" code="cTiVResu" description="Resume cTiVo's download queue processing if it was paused."/>
 
 		<class name="format" code="cTFm" description="A video conversion format (e.g. &quot;Apple TV 4K&quot;, &quot;iPhone HD&quot;).">
 			<cocoa class="MTFormat"/>
